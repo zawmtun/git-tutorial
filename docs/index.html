@@ -256,41 +256,41 @@ div.tocify {
 <li>GitHub operations</li>
 <li>Data analysis workflow using Git and GitHub</li>
 </ul>
-<div id="set-up" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> Set up</h1>
+<div id="set-up" class="section level1">
+<h1>Set up</h1>
 <p>We will use the following software in this tutorial.</p>
-<div id="git" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> Git</h2>
+<div id="git" class="section level3">
+<h3>Git</h3>
 <p>Git is the most popular version control system. It allows us to track the changes of texts as a project develops.</p>
 <p>Git is pre-installed in Mac OS. Make sure your git version is 2.23.0 or above. You can check your git version in your terminal. First, press Command + Spacebar to open a search bar on your screen. Then, type “terminal” and double click “Terminal” in the left sidebar to open the Terminal. In it, type <code>git --version</code> to find out your git version. You can download and update git from <a href="https://sourceforge.net/projects/git-osx-installer/">here</a>.</p>
 <p>In Windows, download and install Git from <a href="https://git-scm.com/download/win">here</a>. After the installation, press Windows key and type “git bash”. You should see Git Bash in the list. Click on it to open the Git Bash terminal.</p>
 </div>
-<div id="visual-studio-code" class="section level2" number="1.2">
-<h2><span class="header-section-number">1.2</span> Visual Studio Code</h2>
+<div id="visual-studio-code" class="section level3">
+<h3>Visual Studio Code</h3>
 <p>We will edit texts using Visual Studio Code editor. Download and install it <a href="https://code.visualstudio.com/">here</a>.</p>
 </div>
-<div id="gitkraken" class="section level2" number="1.3">
-<h2><span class="header-section-number">1.3</span> GitKraken</h2>
+<div id="gitkraken" class="section level3">
+<h3>GitKraken</h3>
 <p>GitKraken is a popular Git graphic user interface (GUI) which allow people to use Git without using the command line.</p>
-<p><strong>Pros of GUI:</strong></p>
+<p><strong>Pros of GUI</strong></p>
 <ul>
 <li>Very low barrier of entry with much better user experience compared to command line</li>
 <li>Some prefer GUI, including those who can use the command line</li>
 </ul>
-<p><strong>Cons of GUI:</strong></p>
+<p><strong>Cons of GUI</strong></p>
 <ul>
 <li>The inner-workings of Git are hidden away with GUIs.</li>
 <li>It leads to dependence on a particular piece of software.</li>
 <li>Interfaces are different between various GUIs.</li>
 </ul>
-<p><strong>Pros of the command line:</strong></p>
+<p><strong>Pros of the command line</strong></p>
 <ul>
 <li>Git is a command line tool. All the documentation and resources online refer to the command line.</li>
 <li>It becomes way more efficient once you grow comfortable with it.</li>
 <li>Advanced Git features are only available in the command line.</li>
 <li>The commands are the same across platforms (Windows, Mac OS, Linux).</li>
 </ul>
-<p><strong>Cons of the command line:</strong></p>
+<p><strong>Cons of the command line</strong></p>
 <ul>
 <li>The learning curve can be steep for beginners.</li>
 </ul>
@@ -302,13 +302,93 @@ div.tocify {
 </ul>
 <p><a href="https://git-scm.com/downloads/guis">Here</a> is a list of Git GUI clients.</p>
 </div>
-<div id="github-account" class="section level2" number="1.4">
-<h2><span class="header-section-number">1.4</span> GitHub account</h2>
+<div id="github-account" class="section level3">
+<h3>GitHub account</h3>
 <p>If you have not done so, sign up for a <a href="https://github.com/">GitHub</a> account.</p>
 </div>
 </div>
-<div id="bash-commands" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> Bash commands</h1>
+<div id="bash-commands" class="section level1">
+<h1>Bash commands</h1>
+<p>This tutorial mainly focuses on the command line. Before learning Git, we will learn how to navigate between directories and manage files in the Bash command line. It is not the most exciting thing to learn but we will just quick go over some of the commonly used commands.</p>
+<div id="navigation" class="section level3">
+<h3>Navigation</h3>
+<p>Open current directory in Explorer (in Windows) or in Finder (in Mac).</p>
+<pre><code># Windows
+start . 
+
+# Mac
+open .</code></pre>
+<p>Check the current directory.</p>
+<pre><code>pwd</code></pre>
+<p>List files and directories in the current directory.</p>
+<pre><code>ls
+ls -a</code></pre>
+<p>Go to a sub-directory.</p>
+<pre><code>cd &lt;sub-directory&gt;</code></pre>
+<p>Go to the parent directory.</p>
+<pre><code>cd ..</code></pre>
+</div>
+<div id="working-with-files-and-directories" class="section level3">
+<h3>Working with files and directories</h3>
+<p>Create a file.</p>
+<pre><code>touch file.txt</code></pre>
+<p>Create multiple files.</p>
+<pre><code>touch file1.txt file2.txt file3.txt</code></pre>
+<p>Create a directory.</p>
+<pre><code>mkdir directory_name</code></pre>
+<p>Create multiple directories.</p>
+<pre><code>mkdir dir1 dir2 dir3</code></pre>
+<p>Delete a file.</p>
+<pre><code>rm file.txt</code></pre>
+<p>Delete a directory.</p>
+<pre><code>rm -rf directory_name
+rmdir directory_name</code></pre>
+</div>
+</div>
+<div id="git-commands" class="section level1">
+<h1>Git commands</h1>
+<div id="basics" class="section level3">
+<h3>Basics</h3>
+</div>
+<div id="committing" class="section level3">
+<h3>Committing</h3>
+</div>
+<div id="branching" class="section level3">
+<h3>Branching</h3>
+</div>
+<div id="merging" class="section level3">
+<h3>Merging</h3>
+</div>
+<div id="diffs" class="section level3">
+<h3>Diffs</h3>
+</div>
+<div id="undoing-stuffs" class="section level3">
+<h3>Undoing stuffs</h3>
+</div>
+</div>
+<div id="github-operations" class="section level1">
+<h1>Github operations</h1>
+<div id="basics-1" class="section level3">
+<h3>Basics</h3>
+</div>
+<div id="fetch-and-pull" class="section level3">
+<h3>Fetch and pull</h3>
+</div>
+</div>
+<div id="data-analysis-workflow" class="section level1">
+<h1>Data analysis workflow</h1>
+<div id="centralised-workflow" class="section level3">
+<h3>Centralised workflow</h3>
+</div>
+<div id="feature-branches" class="section level3">
+<h3>Feature branches</h3>
+</div>
+<div id="pull-requests" class="section level3">
+<h3>Pull requests</h3>
+</div>
+<div id="the-fork-and-clone-workflow" class="section level3">
+<h3>The Fork and Clone Workflow</h3>
+</div>
 </div>
 
 
