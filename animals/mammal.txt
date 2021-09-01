@@ -1,0 +1,11 @@
+bats
+rats
+hamsters
+rabbits
+human
+whales
+seals
+manatees
+sea otters
+chimpanzee
+goat
