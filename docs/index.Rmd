@@ -83,7 +83,7 @@ This tutorial mainly focuses on the command line. Before learning Git, we will l
 
 Open current directory in Explorer (in Windows) or in Finder (in Mac).
 
-```
+```{r eval=FALSE}
 # Windows
 start . 
 
@@ -93,26 +93,26 @@ open .
 
 Check the current directory.
 
-```
+```{r eval=FALSE}
 pwd
 ```
 
 List files and directories in the current directory.
 
-```
+```{r eval=FALSE}
 ls
 ls -a
 ```
 
 Go to a sub-directory.
 
-```
-cd <sub-directory>
+```{r eval=FALSE}
+cd sub-directory
 ```
 
 Go to the parent directory.
 
-```
+```{r eval=FALSE}
 cd ..
 ```
 
@@ -120,45 +120,83 @@ cd ..
 
 Create a file.
 
-```
+```{r eval=FALSE}
 touch file.txt
 ```
 
 Create multiple files.
 
-```
+```{r eval=FALSE}
 touch file1.txt file2.txt file3.txt
 ```
 
 Create a directory.
 
-```
+```{r eval=FALSE}
 mkdir directory_name
 ```
 
 Create multiple directories.
 
-```
+```{r eval=FALSE}
 mkdir dir1 dir2 dir3
 ```
 
 Delete a file.
 
-```
+```{r eval=FALSE}
 rm file.txt
 ```
 
 Delete a directory.
 
-```
+```{r eval=FALSE}
 rm -rf directory_name
 rmdir directory_name
 ```
 
 # Git commands
 
-### Basics
+### Configuration
 
+It is essential to add username and email for logging purposes.
+
+```{r eval=FALSE}
+git config --global user.name "your_name"
+git config --global user.email "your_email"
+```
+
+Set Visual Studio Code as the default editor.
+
+```{r eval=FALSE}
+git config --global core.editor "code --wait"
+```
+
+### Git basics
+
+[pic: initiate, stage, commit]
+
+Start a git repository.
+
+```{r eval=FALSE}
+git init
+```
+
+Check status.
+
+```{r eval=FALSE}
+git status
+```
+
+Stage files and directories.
+
+```{r eval=FALSE}
+# Stage one or more selected files
+git add file.txt file.R
+
+# Stage all files
+git add .
+```
 
 ### Committing
 
@@ -191,8 +229,5 @@ rmdir directory_name
 
 
 ### Pull requests
-
-
-### The Fork and Clone Workflow
 
 

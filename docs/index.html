@@ -313,42 +313,61 @@ div.tocify {
 <div id="navigation" class="section level3">
 <h3>Navigation</h3>
 <p>Open current directory in Explorer (in Windows) or in Finder (in Mac).</p>
-<pre><code># Windows
+<pre class="r"><code># Windows
 start . 
 
 # Mac
 open .</code></pre>
 <p>Check the current directory.</p>
-<pre><code>pwd</code></pre>
+<pre class="r"><code>pwd</code></pre>
 <p>List files and directories in the current directory.</p>
-<pre><code>ls
+<pre class="r"><code>ls
 ls -a</code></pre>
 <p>Go to a sub-directory.</p>
-<pre><code>cd &lt;sub-directory&gt;</code></pre>
+<pre class="r"><code>cd sub-directory</code></pre>
 <p>Go to the parent directory.</p>
-<pre><code>cd ..</code></pre>
+<pre class="r"><code>cd ..</code></pre>
 </div>
 <div id="working-with-files-and-directories" class="section level3">
 <h3>Working with files and directories</h3>
 <p>Create a file.</p>
-<pre><code>touch file.txt</code></pre>
+<pre class="r"><code>touch file.txt</code></pre>
 <p>Create multiple files.</p>
-<pre><code>touch file1.txt file2.txt file3.txt</code></pre>
+<pre class="r"><code>touch file1.txt file2.txt file3.txt</code></pre>
 <p>Create a directory.</p>
-<pre><code>mkdir directory_name</code></pre>
+<pre class="r"><code>mkdir directory_name</code></pre>
 <p>Create multiple directories.</p>
-<pre><code>mkdir dir1 dir2 dir3</code></pre>
+<pre class="r"><code>mkdir dir1 dir2 dir3</code></pre>
 <p>Delete a file.</p>
-<pre><code>rm file.txt</code></pre>
+<pre class="r"><code>rm file.txt</code></pre>
 <p>Delete a directory.</p>
-<pre><code>rm -rf directory_name
+<pre class="r"><code>rm -rf directory_name
 rmdir directory_name</code></pre>
 </div>
 </div>
 <div id="git-commands" class="section level1">
 <h1>Git commands</h1>
-<div id="basics" class="section level3">
-<h3>Basics</h3>
+<div id="configuration" class="section level3">
+<h3>Configuration</h3>
+<p>It is essential to add username and email for logging purposes.</p>
+<pre class="r"><code>git config --global user.name &quot;your_name&quot;
+git config --global user.email &quot;your_email&quot;</code></pre>
+<p>Set Visual Studio Code as the default editor.</p>
+<pre class="r"><code>git config --global core.editor &quot;code --wait&quot;</code></pre>
+</div>
+<div id="git-basics" class="section level3">
+<h3>Git basics</h3>
+<p>[pic: initiate, stage, commit]</p>
+<p>Start a git repository.</p>
+<pre class="r"><code>git init</code></pre>
+<p>Check status.</p>
+<pre class="r"><code>git status</code></pre>
+<p>Stage files and directories.</p>
+<pre class="r"><code># Stage one or more selected files
+git add file.txt file.R
+
+# Stage all files
+git add .</code></pre>
 </div>
 <div id="committing" class="section level3">
 <h3>Committing</h3>
@@ -368,7 +387,7 @@ rmdir directory_name</code></pre>
 </div>
 <div id="github-operations" class="section level1">
 <h1>Github operations</h1>
-<div id="basics-1" class="section level3">
+<div id="basics" class="section level3">
 <h3>Basics</h3>
 </div>
 <div id="fetch-and-pull" class="section level3">
@@ -385,9 +404,6 @@ rmdir directory_name</code></pre>
 </div>
 <div id="pull-requests" class="section level3">
 <h3>Pull requests</h3>
-</div>
-<div id="the-fork-and-clone-workflow" class="section level3">
-<h3>The Fork and Clone Workflow</h3>
 </div>
 </div>
 
