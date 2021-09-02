@@ -10,7 +10,8 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+opts_chunk$set(echo = TRUE)
 ```
 
 This is a hands-on tutorial on Git and GitHub. It covers the following topics:
@@ -61,7 +62,7 @@ GitKraken is a popular Git graphic user interface (GUI) which allow people to us
 
 **Cons of the command line**
 
--   The learning curve can be steep for beginners.  
+-   The learning curve can be steep for beginners.
 
 Other popular GUIs include:
 
@@ -81,7 +82,7 @@ This tutorial mainly focuses on the command line. Before learning Git, we will l
 
 ### Navigation
 
-Open current directory in Explorer (in Windows) or in Finder (in Mac).
+Open current folder in Explorer (in Windows) or in Finder (in Mac).
 
 ```{r eval=FALSE}
 # Windows
@@ -91,32 +92,32 @@ start .
 open .
 ```
 
-Check the current directory.
+Check the current location.
 
 ```{r eval=FALSE}
 pwd
 ```
 
-List files and directories in the current directory.
+List files and folders in the current location.
 
 ```{r eval=FALSE}
 ls
 ls -a
 ```
 
-Go to a sub-directory.
+Go to a sub-folder.
 
 ```{r eval=FALSE}
-cd sub-directory
+cd sub-folder
 ```
 
-Go to the parent directory.
+Go to the parent folder.
 
 ```{r eval=FALSE}
 cd ..
 ```
 
-### Working with files and directories
+### Working with files and folders
 
 Create a file.
 
@@ -124,19 +125,19 @@ Create a file.
 touch file.txt
 ```
 
-Create multiple files.
+Create multiple files in one line.
 
 ```{r eval=FALSE}
 touch file1.txt file2.txt file3.txt
 ```
 
-Create a directory.
+Create a folder.
 
 ```{r eval=FALSE}
-mkdir directory_name
+mkdir folder_name
 ```
 
-Create multiple directories.
+Create multiple folders in one line.
 
 ```{r eval=FALSE}
 mkdir dir1 dir2 dir3
@@ -148,11 +149,11 @@ Delete a file.
 rm file.txt
 ```
 
-Delete a directory.
+Delete a folder.
 
 ```{r eval=FALSE}
-rm -rf directory_name
-rmdir directory_name
+rm -rf folder_name
+rmdir folder_name
 ```
 
 # Git commands
@@ -166,52 +167,115 @@ git config --global user.name "your_name"
 git config --global user.email "your_email"
 ```
 
-Set Visual Studio Code as the default editor.
-
-```{r eval=FALSE}
-git config --global core.editor "code --wait"
-```
-
 ### Git basics
 
-[pic: initiate, stage, commit]
+A Git repository (repo) is a work space within a folder in which changes in files and sub-folders can be tracked and managed. To use git in a data analysis project, we need to initialise a git repo in the project folder. We can have as many repos on our machines as needed.
 
-Start a git repository.
+To initialise a git repo, navigate to the project folder and use the following command. This creates a hidden `.git` folder.
 
 ```{r eval=FALSE}
 git init
 ```
 
-Check status.
+Please do not initialise a Git repo in a folder when its parent folder is also a Git repo. The latter cannot track or obtain the contents of the former.
+
+```{r fig.height=2.5, echo=FALSE}
+include_graphics("resource/git-repo.png")
+```
+
+Before running `git init`, use `git status` to make sure the current folder is not inside a repo. You should see the following message.
 
 ```{r eval=FALSE}
 git status
+# fatal: not a git repository (or any of the parent directories): .git
 ```
 
-Stage files and directories.
+If the current folder is inside a repo, `git status` shows the following message.
 
 ```{r eval=FALSE}
-# Stage one or more selected files
-git add file.txt file.R
+git status
+# On branch main
+# 
+# No commits yet
+# 
+# nothing to commit (create/copy files and use "git add" to track)
+```
 
-# Stage all files
+In this case, you can either initialise a git repo in a different folder or remove the repo in the parent folder. To remove a Git repo, simply locate the associated `.git` folder.
+
+After initialising a Git repo, you can add a 'commit' each time you want to take a snapshot of your repository. In each commit, Git can save the state of selected or all files and folders in the repo.
+
+```{r echo=FALSE}
+include_graphics("resource/add-a-commit.png")
+```
+
+**Basic Git workflow**
+
+1. Do work - create new files and folders, delete files, edits files, ...
+2. Add changes - group specific changes together and prepare for a commit.
+3. Commit - Commit the above added changes.
+
+```{r echo=FALSE}
+include_graphics("resource/basic-git-workflow.png")
+```
+
+`git add` adds the changes to the staging area.
+
+```{r eval=FALSE}
+# Add one or more files
+git add file1.txt file2.R
+
+# Add all changes
 git add .
 ```
 
-### Committing
+`git commit` commits all changes in the staging area.
+
+```{r eval=FALSE}
+git commit
+
+# One liner
+git commit -m "read survey data"
+```
+
+The default editor of Git command line can be overwhelming. You can set Visual Studio Code as the default editor.
+
+```{r eval=FALSE}
+git config --global core.editor "code --wait"
+```
+
+### More about committing
+
+**Amending commits**
+
+If you forgot to add files or edits after committing or you want to change the commit message, you can change the commit using `--amend` option.
+
+```{r eval=FALSE}
+git commit -m "read survey data"
+git add additional_file
+git commit --amend
+```
+
+**Basic guidelines**
+
+* Commit often
+* Make atomic commits: group similar changes together. Don't commit many changes all at once.
+* Write meaningful but concise commit messages
+
+An atomic commit should include a single change or fix, focusing on a single thing. For example, create a descriptive table, create a scatter plot, etc). This helps in undoing specific changes if necessary. Also, it makes the data analysis easier to review.
+
+What is a meaning but concise commit message? The Git docs suggest present-tense imperative messages (e.g., add a table, create a plot). We can also use a different style (e.g., past-tense) that we prefer as long as it is consistent within the team.
+
+**Ignoring files**
 
 
 ### Branching
 
-
 ### Merging
-
 
 ### Diffs
 
-
 ### Undoing stuffs
-
 
 # Github operations
 
@@ -219,15 +283,10 @@ git add .
 
 ### Fetch and pull
 
-
 # Data analysis workflow
 
 ### Centralised workflow
 
-
 ### Feature branches
 
-
 ### Pull requests
-
-
