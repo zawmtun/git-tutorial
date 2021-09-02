@@ -20,7 +20,7 @@ This is a hands-on tutorial on Git and GitHub. It covers the following topics:
 -   Basic bash commands
 -   Git commands
 -   GitHub operations
--   Data analysis workflow using Git and GitHub
+-   Workflow using Git and GitHub
 
 # Set up
 
@@ -283,7 +283,7 @@ What is a meaning but concise commit message? The Git docs suggest present-tense
 
 ### Fetch and pull
 
-# Data analysis workflow
+# Workflow
 
 ### Centralised workflow
 
