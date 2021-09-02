@@ -40,7 +40,7 @@ We will edit texts using Visual Studio Code editor. Download and install it [her
 
 ### GitKraken
 
-GitKraken is a popular Git graphic user interface (GUI) which allow people to use Git without using the command line.
+GitKraken is a popular Git graphic user interface (GUI) which allow people to use Git without using the command line. You can download GitKraken from [here](https://www.gitkraken.com/).
 
 **Pros of GUI**
 
