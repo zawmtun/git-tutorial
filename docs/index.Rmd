@@ -156,6 +156,19 @@ rm -rf folder_name
 rmdir folder_name
 ```
 
+### Exercise
+
+1. Create a new folder and name it `bash_basics`.
+2. Go into that folder
+3. Create two sub-folders: `SLING` and `marvel`
+4. Go into `SLING`
+5. Create two files: `lab_members.txt` and `movies.txt`
+6. In `lab_members.txt`, enter any three names and save the file.
+7. In `movies.txt`, enter any three movies we have watched and save the file.
+8. Go into `marvel` folder.
+9. Create two files: `heroes.txt` and `villains.txt`
+10. In each file, enter three heroes and villains respectively. Then, save the file.
+
 # Git commands
 
 ### Configuration
@@ -243,6 +256,15 @@ The default editor of Git command line can be overwhelming. You can set Visual S
 ```{r eval=FALSE}
 git config --global core.editor "code --wait"
 ```
+
+**Exercises**
+
+1. In previous exercise, we have created `bash_basics` folder. Initiate a git repo in it.
+2. Stage all files and commit. Key in "initial commit" as the commit message.
+3. Add another sub-folder called `sg_hawker_food`.
+4. Go into that folder.
+5. Create three files with names of SG hawker dishes: `dish_name2.txt`, `dish_name2.txt`, etc.
+6. Stage and commit these new files.
 
 ### More about committing
 
