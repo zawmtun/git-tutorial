@@ -8,6 +8,8 @@ output:
     toc: TRUE
     toc_float: TRUE
     number_sections: FALSE
+bibliography: references.bib
+csl: vancouver-superscript
 ---
 
 ```{r setup, include=FALSE}
@@ -17,11 +19,22 @@ opts_chunk$set(echo = TRUE, fig.align = "center")
 
 This is a hands-on tutorial on Git and GitHub. It covers the following topics:
 
+-   Why Git?
 -   Set up
 -   Basic bash commands
 -   Git commands
 -   GitHub operations
 -   Workflow using Git and GitHub
+
+# Why Git?
+
+People who do not use Git invariably create some form of ad-hoc version control system. Here is an example by Jenny Bryan[@bryan2018]. Most of us may be familiar with Figure \@ref(fig:git-workflow) (A or B) which shows a hypothetical analysis using a single script file `iris.R`. Following that, the future self or collaborators creates derivative copies of `iris.R` adding file names with initials, dates, or other descriptive characters. It is not hard to imagine that the script files become too complex to manage as the project develops.
+
+Git tracks the changes in `iris.R` through a series of 'commits' with associated an explanatory message. Figure \@ref(fig:git-workflow) (C) shows a linear flow of time adding commits sequentially from the bottom to the top. Figure \@ref(fig:git-workflow) (D) depicts a collaboration in which contributors work independently and commit their work frequently to the main workflow. Once an important milestone is reached, the commit can be marked using a human-readable tag, as in `draft-01`.
+
+```{r git-workflow, fig.cap="Version control using file name in (A) solo work or (B) collaborative work; Git workflow in (C) solo work or (D) collaborative work[@bryan2018]", fig.height=2.5, echo=FALSE}
+include_graphics("resource/git-workflow.png")
+```
 
 # Set up
 
@@ -129,30 +142,19 @@ rmdir folder_name
 
 ### Exercise
 
-1. Create a new folder and name it `bash_basics`.
-2. Go into that folder
-3. Create two sub-folders: `SLING` and `marvel`
-4. Go into `SLING`
-5. Create two files: `lab_members.txt` and `movies.txt`
-6. In `lab_members.txt`, enter any three names and save the file.
-7. In `movies.txt`, enter any three movies we have watched and save the file.
-8. Go into `marvel` folder.
-9. Create two files: `heroes.txt` and `villains.txt`
+1.  Create a new folder and name it `bash_basics`.
+2.  Go into that folder
+3.  Create two sub-folders: `SLING` and `marvel`
+4.  Go into `SLING`
+5.  Create two files: `lab_members.txt` and `movies.txt`
+6.  In `lab_members.txt`, enter any three names and save the file.
+7.  In `movies.txt`, enter any three movies we have watched and save the file.
+8.  Go into `marvel` folder.
+9.  Create two files: `heroes.txt` and `villains.txt`
 10. In each file, enter three heroes and villains respectively. Then, save the file.
 11. Who cares about the villains!? Let's kill them. Delete villains file.
 
 # Git commands
-
-### Why Git?
-
-People who do not use Git invariably create some form of ad-hoc version control system. Most of us may be familiar with Figure \@ref(fig:git-workflow) (A or B) which shows a hypothetical analysis using a single script file `iris.R`. Following that, the future self or collaborators creates derivative copies of `iris.R` adding file names with initials, dates, or other descriptive characters. It is not hard to imagine that the script files become too complex to manage as the project develops.  
-
-Git tracks the changes in `iris.R` through a series of 'commits' with associated an explanatory message. Figure \@ref(fig:git-workflow) (C) shows a linear flow of time adding commits sequentially from the bottom to the top. Figure \@ref(fig:git-workflow) (D) depicts a collaboration in which contributors work independently and commit their work frequently to the main workflow. Once an important milestone is reached, the commit can be marked using a human-readable tag, as in `draft-01`.
-
-```{r git-workflow, fig.cap="Version control using file name in (A) solo work or (B) collaborative work; Git workflow in (C) solo work or (D) collaborative work", fig.height=2.5, echo=FALSE}
-include_graphics("resource/git-workflow.png")
-```
-
 
 ### Configuration
 
@@ -231,7 +233,7 @@ git status
 # nothing to commit (create/copy files and use "git add" to track)
 ```
 
-So, `git status` is our friend!  
+So, `git status` is our friend!
 
 In this case, you can either initialise a git repo in a different folder or remove the repo in the parent folder. To remove a Git repo, simply locate and delete the associated `.git` folder.
 
@@ -243,9 +245,9 @@ include_graphics("resource/add-a-commit.png")
 
 **Basic Git workflow**
 
-1. Do work - create new files and folders, delete files, edits files, ...
-2. Add changes - group specific changes together and prepare for a commit.
-3. Commit - Commit the above added changes.
+1.  Do work - create new files and folders, delete files, edits files, ...
+2.  Add changes - group specific changes together and prepare for a commit.
+3.  Commit - Commit the above added changes.
 
 ```{r basic-git-workflow, fig.cap="Basic git workflow", echo=FALSE}
 include_graphics("resource/basic-git-workflow.png")
@@ -278,12 +280,12 @@ git config --global core.editor "code --wait"
 
 **Exercises**
 
-1. In previous exercise, we have created `bash_basics` folder. Initiate a git repo in it.
-2. Stage all files and commit. Key in "initial commit" as the commit message.
-3. Add another sub-folder called `sg_hawker_food`.
-4. Go into that folder.
-5. Create three files with names of SG hawker dishes: `dish_name2.txt`, `dish_name2.txt`, etc.
-6. Stage and commit these new files.
+1.  In previous exercise, we have created `bash_basics` folder. Initiate a git repo in it.
+2.  Stage all files and commit. Key in "initial commit" as the commit message.
+3.  Add another sub-folder called `sg_hawker_food`.
+4.  Go into that folder.
+5.  Create three files with names of SG hawker dishes: `dish_name2.txt`, `dish_name2.txt`, etc.
+6.  Stage and commit these new files.
 
 ### More about committing
 
@@ -299,16 +301,15 @@ git commit --amend
 
 **Basic guidelines**
 
-* Commit often
-* Make atomic commits: group similar changes together. Don't commit many changes all at once.
-* Write meaningful but concise commit messages
+-   Commit often
+-   Make atomic commits: group similar changes together. Don't commit many changes all at once.
+-   Write meaningful but concise commit messages
 
 An atomic commit should include a single change or fix, focusing on a single thing. For example, create a descriptive table, create a scatter plot, etc). This helps in undoing specific changes if necessary. Also, it makes the data analysis easier to review.
 
 What is a meaning but concise commit message? The Git docs suggest present-tense imperative messages (e.g., add a table, create a plot). We can also use a different style (e.g., past-tense) that we prefer as long as it is consistent within the team.
 
 **Ignoring files**
-
 
 ### Branching
 
@@ -331,3 +332,5 @@ What is a meaning but concise commit message? The Git docs suggest present-tense
 ### Feature branches
 
 ### Pull requests
+
+# References
