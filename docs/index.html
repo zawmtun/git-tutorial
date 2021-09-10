@@ -346,11 +346,11 @@ ls -a</code></pre>
 <p>Delete a file.</p>
 <pre class="r"><code>rm file.txt # Remove the file</code></pre>
 <p>Delete a folder.</p>
-<pre class="r"><code>rm -rf folder_name # -rf means remove 
+<pre class="r"><code>rm -rf folder_name # -rf means recursive and force 
 rmdir folder_name</code></pre>
 </div>
-<div id="exercise" class="section level3">
-<h3>Exercise</h3>
+<div id="exercise-1" class="section level3">
+<h3>Exercise 1</h3>
 <ol style="list-style-type: decimal">
 <li>Create a new folder and name it <code>bash_basics</code>.</li>
 <li>Go into that folder</li>
@@ -463,7 +463,17 @@ git add .</code></pre>
 git commit -m &quot;read survey data&quot;</code></pre>
 <p>The default editor of Git command line can be overwhelming. You can set Visual Studio Code as the default editor.</p>
 <pre class="r"><code>git config --global core.editor &quot;code --wait&quot;</code></pre>
-<p><strong>Exercises</strong></p>
+</div>
+<div id="getting-help" class="section level3">
+<h3>Getting help</h3>
+<p>You can use the command below to see the Git command quick reference</p>
+<pre><code>git [command] -help</code></pre>
+<p>Need more details? Open the online manual page in your default browser using the following commands.</p>
+<pre><code>git help [command]
+git [command] --help</code></pre>
+</div>
+<div id="exercise-2" class="section level3">
+<h3>Exercise 2</h3>
 <ol style="list-style-type: decimal">
 <li>In previous exercise, we have created <code>bash_basics</code> folder. Initiate a git repo in it.</li>
 <li>Stage all files and commit. Key in “initial commit” as the commit message.</li>
