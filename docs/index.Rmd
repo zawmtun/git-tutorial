@@ -324,7 +324,7 @@ An atomic commit should include a single change or fix, focusing on a single thi
 
 What is a meaning but concise commit message? The Git docs suggest present-tense imperative messages (e.g., add a table, create a plot). We can also use a different style (e.g., past-tense) that we prefer as long as it is consistent within the team.
 
-**Get a list of commits**
+**Get commit history**
 
 Use `git log` to get a list of commits with the corresponding details (author, date/time, commit message). This is useful to quickly look at the commit history. `--oneline` generates a succinct output with one row per commit with their commit messages.
 
