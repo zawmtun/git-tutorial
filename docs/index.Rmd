@@ -136,11 +136,11 @@ rm file.txt # Remove the file
 Delete a folder.
 
 ```{r eval=FALSE}
-rm -rf folder_name # -rf means remove 
+rm -rf folder_name # -rf means recursive and force 
 rmdir folder_name
 ```
 
-### Exercise
+### Exercise 1
 
 1.  Create a new folder and name it `bash_basics`.
 2.  Go into that folder
@@ -278,7 +278,22 @@ The default editor of Git command line can be overwhelming. You can set Visual S
 git config --global core.editor "code --wait"
 ```
 
-**Exercises**
+### Getting help
+
+You can use the command below to see the Git command quick reference
+
+```
+git [command] -help
+```
+
+Need more details? Open the online manual page in your default browser using the following commands.
+
+```
+git help [command]
+git [command] --help
+```
+
+### Exercise 2
 
 1.  In previous exercise, we have created `bash_basics` folder. Initiate a git repo in it.
 2.  Stage all files and commit. Key in "initial commit" as the commit message.
