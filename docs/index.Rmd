@@ -215,6 +215,8 @@ Please do not initialise a Git repo in a folder when its parent folder is also a
 include_graphics("resource/git-repo.png")
 ```
 
+If you find yourself in this situation, you can either initialise a git repo in a different folder or remove the repo in the parent folder. To remove a Git repo, simply locate and delete the associated `.git` folder.
+
 Before running `git init`, use `git status` to make sure the current folder is not inside a repo. You should see the following message.
 
 ```{r eval=FALSE}
@@ -233,9 +235,7 @@ git status
 # nothing to commit (create/copy files and use "git add" to track)
 ```
 
-So, `git status` is our friend!
-
-In this case, you can either initialise a git repo in a different folder or remove the repo in the parent folder. To remove a Git repo, simply locate and delete the associated `.git` folder.
+Make `git status` is our friend!
 
 After initialising a Git repo, you can add a 'commit' each time you want to take a snapshot of your repository. In each commit, Git can save the state of selected or all files and folders in the repo.
 
